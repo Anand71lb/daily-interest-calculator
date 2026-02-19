@@ -4,43 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Daily Interest Calculator</title>
+    <title>404 - Page Not Found | Daily Interest Calculator — DailyInterestCalculator.in</title>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Serif+Display&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
-    <header role="banner">
-        <div class="container" style="padding: 0;">
-            <a href="index.html" class="logo" aria-label="Daily Interest Calculator Home">Daily Interest Calculator</a>
-        </div>
-    </header>
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
 
-    <main class="container" role="main"
-        style="text-align: center; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <div class="error-content">
-            <h1 style="font-size: 4rem; color: var(--accent); margin-bottom: 0;">404</h1>
-            <h2>Page Not Found</h2>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: var(--spacing-xl);">
-                Oops! The page you're looking for doesn't exist or has been moved.
-            </p>
-            <a href="index.html" class="btn-primary"
-                style="display: inline-block; width: auto; text-decoration: none;">Return Home</a>
-        </div>
-    </main>
+    <div class="wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">DailyInterestCalculator<em>.in</em></span>
+            </div>
+            <h1 class="hero-headline">Error 404</h1>
+            <p class="tagline">The page you're looking for doesn't exist.</p>
+        </header>
 
-    <footer role="contentinfo">
-        <div class="container">
-            <nav class="footer-links" aria-label="Footer navigation">
+        <main class="card" style="text-align: center;">
+            <div class="card-label">Oops!</div>
+
+            <div class="content-wrapper"
+                style="gap: 24px; margin-top: 20px; padding-bottom: 20px; justify-content: center; align-items: center;">
+                <h2 style="color: var(--accent); font-size: 3rem; border: none; padding: 0; margin-bottom: 0;">404</h2>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px;">
+                    It looks like you've taken a wrong turn. Let's get you back to the calculator.
+                </p>
+                <a href="index.html" class="calc-btn"
+                    style="text-decoration: none; display: inline-flex; width: auto; min-width: 200px;">Return Home</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="cookies.html">Cookies</a>
+                <a href="cookies.html">Cookie Policy</a>
                 <a href="disclaimer.html">Disclaimer</a>
-            </nav>
+                <a href="contact.html">Contact Us</a>
+            </div>
             <p>&copy; 2026 DailyInterestCalculator.in. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>

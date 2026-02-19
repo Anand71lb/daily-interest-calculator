@@ -2,627 +2,444 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N29CHHJYC7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-N29CHHJYC7');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Interest Calculator - Calculate Daily Deposit Returns 2026</title>
-    <meta name="description"
-        content="Daily Interest Calculator: Calculate interest on daily deposits instantly. Perfect for RD accounts, chit funds, and daily savings schemes in India. Free tool with average days method.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="canonical" href="https://dailyinterestcalculator.in">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dailyinterestcalculator.in/">
-    <meta property="og:title" content="Daily Interest Calculator - Indian RD & Savings 2026">
-    <meta property="og:description"
-        content="Daily Interest Calculator: Calculate returns on your daily savings instantly. Perfect for Recurring Deposits (RD) and daily chit funds.">
-    <meta property="og:image" content="https://dailyinterestcalculator.in/assets/og-image.png">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://dailyinterestcalculator.in/">
-    <meta name="twitter:title" content="Daily Interest Calculator - Indian RD & Savings 2026">
-    <meta name="twitter:description"
-        content="Daily Interest Calculator: Calculate returns on your daily savings instantly. Perfect for Recurring Deposits (RD) and daily chit funds.">
-    <meta name="twitter:image" content="https://dailyinterestcalculator.in/assets/og-image.png">
-
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <!-- FAQ Schema (JSON-LD) for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How is interest calculated on daily deposits?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Interest on daily deposits is calculated using the Average Days Method. Total deposited amount is multiplied by the annual interest rate and the average number of days (Total Days + 1) / 2, then divided by 365."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Average Days Method for RD calculation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Average Days Method calculates interest by assuming the average deposit period is (n+1)/2 days, where n is the total number of days. This accounts for the fact that the first deposit earns interest for all days while the last earns for just one day."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I use this for Post Office RD calculation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! This calculator works for Post Office Recurring Deposits, bank RD schemes, and any daily deposit savings plan. Enter your daily deposit amount, deposit period, and interest rate to get accurate results."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much interest will I earn on ₹1000 daily deposit for 1 year?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For ₹1000 daily deposit for 365 days at 6.5% annual interest, you'll deposit ₹3,65,000 total and earn approximately ₹11,878 in interest, giving a maturity amount of ₹3,76,878."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is daily deposit better than monthly RD?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Daily deposits offer more flexibility and discipline for small savers. While monthly RDs are more convenient, daily deposits help build a consistent saving habit and can be ideal for daily wage earners or small business owners."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- Calculator Schema for Rich Results -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Daily Interest Calculator 2026",
-      "url": "https://dailyinterestcalculator.in",
-      "description": "Free Daily Interest Calculator for recurring deposits, daily savings, and chit funds in India.",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      }
-    }
-    </script>
-
-    <!-- HowTo Schema for Calculation Steps -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Use a Daily Interest Calculator",
-      "description": "Step-by-step guide to using our Daily Interest Calculator with the Average Days Method.",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Enter Daily Deposit Amount",
-          "text": "Input the amount you deposit daily (e.g., ₹500, ₹1000)"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Select Deposit Period",
-          "text": "Choose the total number of days or select start and end dates"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Enter Interest Rate",
-          "text": "Input the annual interest rate percentage (e.g., 6.5% for Post Office RD)"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Get Instant Results",
-          "text": "View total deposited amount, interest earned, and maturity value instantly"
-        }
-      ]
-    }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Interest Calculator — Calculate Simple & Compound Interest Per Day</title>
+  <meta name="description"
+    content="Calculate daily interest on loans, savings, and investments in seconds. Support for simple and compound interest with multiple currencies including ₹ (INR), $ (USD), and more." />
+  <link rel="canonical" href="https://dailyinterestcalculator.in/" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
-    <header role="banner">
-        <div class="container header-container">
-            <a href="index.html" class="logo" aria-label="Daily Interest Calculator Home">
-                <span class="logo-emoji">💰</span>
-                <span class="logo-text">Daily Interest Calculator</span>
-            </a>
-        </div>
+
+  <!-- Background grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">DailyInterestCalculator<em>.in</em></span>
+      </div>
+      <h1 class="hero-headline">Stop Guessing. See Your Exact Daily Interest in Seconds.</h1>
+      <p class="tagline">Calculate daily interest on loans, savings, and investments in seconds. Simple interest,
+        compound interest, and full period breakdowns — all in one place.</p>
     </header>
 
-    <main role="main">
-        <article class="container">
-            <h1>Daily Interest Calculator</h1>
-            <p class="subtitle">Daily Interest Calculator: Calculate your Recurring Deposit returns instantly using the
-                Average Days Method.
-                Perfect for RD accounts, chit funds, and daily savings schemes in India.</p>
+    <!-- Main Card -->
+    <main class="card">
 
-            <!-- Daily Deposit Calculator Form -->
-            <div id="interest-form" class="calc-container">
-                <h2>Daily Interest Calculator for Deposits</h2>
+      <div class="card-label">CALCULATOR</div>
 
-                <!-- Tab Toggle: Dates vs Days -->
-                <div class="tab-toggle-container">
-                    <div class="tab-toggle">
-                        <input type="radio" id="mode-days" name="input-mode" value="days" checked>
-                        <label for="mode-days">🔢 By Days</label>
+      <!-- Mode Toggle -->
+      <div class="mode-toggle">
+        <button class="mode-btn active" data-mode="simple">Simple Interest</button>
+        <button class="mode-btn" data-mode="compound">Compound Interest</button>
+      </div>
 
-                        <input type="radio" id="mode-dates" name="input-mode" value="dates">
-                        <label for="mode-dates">📅 By Dates</label>
+      <!-- Inputs -->
+      <div class="inputs-grid">
 
-                        <div class="tab-slider"></div>
-                    </div>
-                </div>
+        <div class="field">
+          <label for="currency">Currency</label>
+          <div class="input-wrap select-wrap">
+            <select id="currency">
+              <option value="INR" data-symbol="₹" data-locale="en-IN">INR (₹)</option>
+              <option value="USD" data-symbol="$" data-locale="en-US">USD ($)</option>
+              <option value="EUR" data-symbol="€" data-locale="de-DE">EUR (€)</option>
+              <option value="GBP" data-symbol="£" data-locale="en-GB">GBP (£)</option>
+              <option value="JPY" data-symbol="¥" data-locale="ja-JP">JPY (¥)</option>
+            </select>
+            <span class="select-arrow">▾</span>
+          </div>
+        </div>
 
-                <!-- Days Input Section -->
-                <div id="section-days" class="input-section active">
-                    <div class="form-group">
-                        <label for="days">Deposit Period (Days)</label>
-                        <input type="number" id="days" placeholder="365" min="1" step="1"
-                            aria-label="Number of deposit days">
-                    </div>
-                </div>
+        <div class="field">
+          <label for="principal">Principal Amount</label>
+          <div class="input-wrap">
+            <span class="input-prefix" id="currency-symbol">₹</span>
+            <input type="number" id="principal" placeholder="1,00,000" min="0" step="any" />
+          </div>
+        </div>
 
-                <!-- Dates Input Section -->
-                <div id="section-dates" class="input-section">
-                    <div class="form-group">
-                        <label for="start-date">Start Date</label>
-                        <input type="date" id="start-date" aria-label="Deposit start date">
-                    </div>
-                    <div class="form-group">
-                        <label for="end-date">End Date (Maturity Date)</label>
-                        <input type="date" id="end-date" aria-label="Deposit end date">
-                    </div>
-                </div>
+        <div class="field">
+          <label for="rate">Annual Interest Rate</label>
+          <div class="input-wrap">
+            <input type="number" id="rate" placeholder="10.5" min="0" step="any" />
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
 
-                <!-- Common Inputs -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="principal">Daily Deposit Amount (₹)</label>
-                        <input type="number" id="principal" placeholder="1000" min="0" step="0.01"
-                            aria-label="Daily deposit amount in rupees">
-                    </div>
+        <div class="field">
+          <label for="days">Number of Days</label>
+          <div class="input-wrap">
+            <input type="number" id="days" placeholder="365" min="1" step="1" />
+            <span class="input-suffix">days</span>
+          </div>
+        </div>
 
-                    <div class="form-group">
-                        <label for="rate">Annual Interest Rate (%)</label>
-                        <input type="number" id="rate" placeholder="6.5" min="0" max="100" step="0.01"
-                            aria-label="Annual interest rate percentage">
-                    </div>
+        <div class="field compound-only hidden">
+          <label for="freq">Compounding Frequency</label>
+          <div class="input-wrap select-wrap">
+            <select id="freq">
+              <option value="365">Daily</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="2">Semi-Annually</option>
+              <option value="1">Annually</option>
+            </select>
+            <span class="select-arrow">▾</span>
+          </div>
+        </div>
 
-                    <div class="form-group" style="margin-top: var(--spacing-xl);">
-                        <button type="button" id="calculate-btn" class="btn-primary" style="width: 100%;">Calculate
-                            Returns</button>
-                    </div>
-                </div>
+      </div>
 
+      <!-- Date range helper -->
+      <div class="date-range">
+        <span class="date-label">Or pick a date range:</span>
+        <div class="date-inputs">
+          <input type="date" id="start-date" />
+          <span class="date-sep">→</span>
+          <input type="date" id="end-date" />
+          <button class="date-apply" id="apply-dates">Apply</button>
+        </div>
+      </div>
 
+      <!-- Calculate Button -->
+      <button class="calc-btn" id="calc-btn">
+        <span>Calculate</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </button>
 
+      <!-- Results -->
+      <div class="results hidden" id="results">
+        <div class="results-divider"><span>Results</span></div>
 
+        <div class="results-grid">
+          <div class="result-card accent">
+            <div class="result-label">Daily Interest</div>
+            <div class="result-value" id="res-daily">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Total Interest</div>
+            <div class="result-value" id="res-interest">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Total Amount</div>
+            <div class="result-value" id="res-total">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Effective Daily Rate</div>
+            <div class="result-value" id="res-eff-rate">—</div>
+          </div>
+        </div>
 
-                <!-- Main Results Display: Equation Style -->
-                <div class="result-section">
-                    <div class="result-equation">
-                        <div class="equation-item">
-                            <span class="eq-label">Deposited</span>
-                            <span class="eq-value" id="deposited-value">₹0.00</span>
-                        </div>
-                        <span class="eq-operator">+</span>
-                        <div class="equation-item">
-                            <span class="eq-label">Interest</span>
-                            <span class="eq-value" id="interest-value">₹0.00</span>
-                        </div>
-                        <span class="eq-operator">=</span>
-                        <div class="equation-item highlighted">
-                            <span class="eq-label">Maturity</span>
-                            <span class="eq-value" id="total-value">₹0.00</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Progress bar -->
+        <div class="interest-bar">
+          <div class="bar-labels">
+            <span>Principal</span>
+            <span>Interest</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-principal" id="bar-principal"></div>
+            <div class="bar-interest" id="bar-interest"></div>
+          </div>
+          <div class="bar-pcts">
+            <span id="pct-principal">—</span>
+            <span id="pct-interest">—</span>
+          </div>
+        </div>
 
-                <!-- Daily Growth Schedule -->
-                <div id="schedule-section" class="schedule-container" style="display: none;">
-                    <div class="schedule-header">
-                        <div class="schedule-title-row">
-                            <h3>📈 Daily Growth Schedule</h3>
-                            <div class="export-actions">
-                                <button id="export-csv-btn" class="btn-secondary" title="Download as CSV">
-                                    📥 CSV
-                                </button>
-                                <button id="export-pdf-btn" class="btn-secondary" title="Download as PDF">
-                                    📄 PDF
-                                </button>
-                            </div>
-                        </div>
-                        <p>Detailed day-by-day interest accumulation breakdown</p>
-                    </div>
-                    <div class="table-wrapper">
-                        <table id="growth-table">
-                            <thead>
-                                <tr>
-                                    <th>Day</th>
-                                    <th>Daily Principal</th>
-                                    <th>Interest Added</th>
-                                    <th>Total Balance</th>
-                                </tr>
-                            </thead>
-                            <tbody id="schedule-body">
-                                <!-- Generated by JS -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <!-- Breakdown table -->
+        <div class="breakdown">
+          <div class="breakdown-header">
+            <span>Period Breakdown</span>
+            <div class="breakdown-tabs">
+              <button class="btab active" data-period="day">Daily</button>
+              <button class="btab" data-period="week">Weekly</button>
+              <button class="btab" data-period="month">Monthly</button>
+              <button class="btab" data-period="year">Yearly</button>
             </div>
+          </div>
+          <div class="breakdown-values">
+            <div class="bval">
+              <span class="bval-label">Per Day</span>
+              <span class="bval-num" id="bv-day">—</span>
             </div>
+            <div class="bval">
+              <span class="bval-label">Per Week</span>
+              <span class="bval-num" id="bv-week">—</span>
+            </div>
+            <div class="bval">
+              <span class="bval-label">Per Month (30d)</span>
+              <span class="bval-num" id="bv-month">—</span>
+            </div>
+            <div class="bval">
+              <span class="bval-label">Per Year</span>
+              <span class="bval-num" id="bv-year">—</span>
+            </div>
+          </div>
+        </div>
 
-            <!-- What is Daily Interest Section -->
-            <section id="what-is">
-                <h2>What is a Daily Interest Calculator?</h2>
-                <p>A <strong>Daily Interest Calculator</strong> is a tool used to determine the interest earned on
-                    regular daily contributions to a savings scheme.
-                    Popular in India through Recurring Deposit (RD) accounts, Post Office schemes, and chit funds, this
-                    calculation method helps you understand returns when you save a fixed amount every day.</p>
-                <p>Unlike lump sum investments, daily deposits build your corpus gradually. The <strong>Average Days
-                        Method</strong> fairly calculates interest by considering that your first deposit earns interest
-                    for the entire period, while your last deposit earns for just one day.</p>
-            </section>
+        <!-- Reset -->
+        <button class="reset-btn" id="reset-btn">↺ Reset</button>
+      </div>
 
-            <!-- How It Works Section -->
-            <section id="how-it-works">
-                <h2>How This Daily Interest Calculator Works</h2>
-                <p>The <strong>Daily Interest Calculator</strong> uses the <strong>Average Days Method</strong>, which
-                    is the standard for Recurring
-                    Deposits in India. Here's the step-by-step process:</p>
-
-                <div class="formula-box">
-                    Interest = Total Deposited × (Rate / 100) × (Average Days / 365)
-                </div>
-
-                <h3>Understanding the Formula</h3>
-                <ul class="formula-explanation">
-                    <li><strong>Total Deposited:</strong> Daily Amount × Number of Days (e.g., ₹1000 × 365 = ₹3,65,000)
-                    </li>
-                    <li><strong>Average Days:</strong> (Total Days + 1) / 2 (e.g., (365 + 1) / 2 = 183 days)</li>
-                    <li><strong>Rate:</strong> Annual interest rate in percentage</li>
-                    <li><strong>365:</strong> Days in a year for accurate calculation</li>
-                </ul>
-
-                <h3>Why Average Days?</h3>
-                <p>The Average Days Method accounts for the staggered nature of deposits. Your first deposit earns
-                    interest for all 365 days, the second for 364 days, and so on. The mathematical average works out to
-                    (n+1)/2 days, which simplifies the calculation while maintaining accuracy.</p>
-            </section>
-
-            <!-- Practical Example Section -->
-            <section id="example">
-                <h2>Practical Example: Daily Deposit of ₹1,000</h2>
-
-                <div class="example-box">
-                    <h3>🎯 Real-Life Scenario</h3>
-                    <p><strong>Goal:</strong> Save ₹1,000 every day for 1 year at 6.5% interest (typical Post Office RD
-                        rate)</p>
-
-                    <p><strong>Calculation:</strong></p>
-                    <ul class="formula-explanation">
-                        <li>Daily Deposit: ₹1,000</li>
-                        <li>Period: 365 days</li>
-                        <li>Total Deposited: ₹1,000 × 365 = ₹3,65,000</li>
-                        <li>Average Days: (365 + 1) / 2 = 183 days</li>
-                        <li>Interest: ₹3,65,000 × 6.5% × 183/365 = ₹11,878.13</li>
-                        <li><strong>Maturity Amount: ₹3,76,878.13</strong></li>
-                    </ul>
-
-                    <p>By depositing just ₹1,000 daily, you accumulate over ₹3.76 lakhs in one year with interest!</p>
-                </div>
-
-                <h3>More Examples for Different Budgets</h3>
-                <ul class="steps-list">
-                    <li><strong>₹500/day for 6 months:</strong> Deposit ₹91,500, earn ~₹1,487 interest at 6.5%</li>
-                    <li><strong>₹2,000/day for 1 year:</strong> Deposit ₹7,30,000, earn ~₹23,756 interest at 6.5%</li>
-                    <li><strong>₹100/day for 2 years:</strong> Deposit ₹73,000, earn ~₹4,748 interest at 6.5%</li>
-                </ul>
-            </section>
-
-            <!-- Step by Step Guide -->
-            <section id="how-to-use">
-                <h2>How to Use the Daily Interest Calculator</h2>
-                <ol class="steps-list">
-                    <li><strong>Choose Input Mode:</strong> Select "By Dates" to enter start and end dates, or "By Days"
-                        to directly enter the number of deposit days</li>
-                    <li><strong>Enter Daily Amount:</strong> Input the amount you plan to deposit daily (e.g., ₹500,
-                        ₹1000, ₹2000)</li>
-                    <li><strong>Set Time Period:</strong> Either select dates or enter number of days for your deposit
-                        plan</li>
-                    <li><strong>Input Interest Rate:</strong> Enter the annual interest rate (check with your bank or
-                        Post Office - typically 6% to 7.5%)</li>
-                    <li><strong>View Live Results:</strong> The calculator instantly shows total deposits, interest
-                        earned, and maturity amount</li>
-                    <li><strong>Review Breakdown:</strong> Check the detailed summary showing average days calculation
-                        and all components</li>
-                </ol>
-            </section>
-
-            <!-- Where This Applies Section -->
-            <section id="where-to-use">
-                <h2>Where to Use Daily Deposit Schemes in India</h2>
-
-                <h3>🏦 Post Office Recurring Deposit</h3>
-                <p>India Post offers RD schemes where you can deposit monthly (or calculate for daily using this tool).
-                    Current interest rates are around 6.5% per annum, compounded quarterly. Minimum deposit: ₹100/month.
-                </p>
-
-                <h3>🏛️ Bank Recurring Deposits</h3>
-                <p>Most Indian banks offer RD schemes with flexible tenures (6 months to 10 years). Interest rates vary
-                    from 5.5% to 7.5% depending on the bank and tenure. SBI, HDFC, ICICI, and other banks accept daily
-                    deposit arrangements.</p>
-
-                <h3>🤝 Chit Funds</h3>
-                <p>Registered chit funds allow daily contributions. While returns vary, use this calculator to estimate
-                    your accumulated corpus over the chit fund period.</p>
-
-                <h3>💼 Company Deposit Schemes</h3>
-                <p>Some companies offer daily deposit schemes for employees. Calculate your potential returns before
-                    committing to such plans.</p>
-
-                <h3>📱 Digital Savings Apps</h3>
-                <p>Modern fintech apps encourage daily micro-savings. Use this calculator to project your long-term
-                    gains from daily digital deposits.</p>
-            </section>
-
-            <!-- Benefits Section -->
-            <section id="benefits">
-                <h2>Benefits of Daily Deposit Savings</h2>
-
-                <h3>✅ For Salaried Individuals</h3>
-                <ul class="formula-explanation">
-                    <li>Build emergency fund systematically without feeling the pinch</li>
-                    <li>Develop disciplined saving habits with small daily amounts</li>
-                    <li>Achieve financial goals (vacation, gadgets, down payment) through consistent saving</li>
-                    <li>Better than impulse spending - automated daily deposits ensure money is saved first</li>
-                </ul>
-
-                <h3>✅ For Business Owners & Daily Wage Earners</h3>
-                <ul class="formula-explanation">
-                    <li>Match income frequency - save daily as you earn daily</li>
-                    <li>Easier to commit ₹500/day than ₹15,000/month psychologically</li>
-                    <li>Build working capital or business expansion fund gradually</li>
-                    <li>Convert variable daily income into stable long-term savings</li>
-                </ul>
-
-                <h3>✅ For Students & First-Time Savers</h3>
-                <ul class="formula-explanation">
-                    <li>Start with as little as ₹50-100 per day to build the saving habit</li>
-                    <li>Watch your money grow with interest - excellent financial education</li>
-                    <li>Create education fund or gadget fund without parental help</li>
-                    <li>Learn time value of money and power of compound interest early</li>
-                </ul>
-            </section>
-
-            <!-- Tips and Strategies -->
-            <section id="tips">
-                <h2>Smart Strategies for Daily Deposit Savings</h2>
-
-                <h3>💡 Maximize Your Returns</h3>
-                <ul class="formula-explanation">
-                    <li><strong>Compare Interest Rates:</strong> Post Office RDs often offer higher rates than private
-                        banks - currently around 6.5% vs 5.5-6%</li>
-                    <li><strong>Longer Tenure = Better Rates:</strong> 5-year RDs typically offer 0.5-1% more than
-                        1-year schemes</li>
-                    <li><strong>Senior Citizen Benefit:</strong> Post Office gives extra 0.5% for seniors (age 60+)</li>
-                    <li><strong>Tax Planning:</strong> RD interest is taxable, but deposits up to ₹1.5 lakh qualify for
-                        80C deduction in some schemes</li>
-                </ul>
-
-                <h3>📅 Timing Your Deposits</h3>
-                <ul class="formula-explanation">
-                    <li><strong>Start on Salary Day:</strong> Automate deposits right after salary credit to ensure
-                        consistency</li>
-                    <li><strong>Match Financial Year:</strong> Starting April 1st simplifies tax calculations</li>
-                    <li><strong>Quarterly Interest:</strong> Some RDs compound quarterly - time your maturity for bonus
-                        compounding</li>
-                    <li><strong>Avoid Penalties:</strong> Missing deposits can incur fees - set calendar reminders or
-                        automate</li>
-                </ul>
-
-                <h3>🎯 Common Mistakes to Avoid</h3>
-                <ul class="formula-explanation">
-                    <li><strong>Overcommitting:</strong> Don't deposit more than you can sustain daily - ₹500/day =
-                        ₹15,000/month</li>
-                    <li><strong>Ignoring Emergency Fund:</strong> Keep 3-6 months expenses liquid before locking into
-                        RDs</li>
-                    <li><strong>Premature Withdrawal:</strong> Breaking RD before maturity reduces interest - plan
-                        tenure carefully</li>
-                    <li><strong>Not Comparing:</strong> Banks, Post Office, and digital platforms offer different rates
-                        - research before committing</li>
-                </ul>
-            </section>
-
-            <!-- Interest Rate Comparison -->
-            <section id="rates">
-                <h2>Current RD Interest Rates in India (2026)</h2>
-                <p><em>Note: Rates are indicative and subject to change. Always verify with the institution.</em></p>
-
-                <div class="example-box">
-                    <h3>🏛️ Major Banks & Institutions</h3>
-                    <ul class="formula-explanation">
-                        <li><strong>Post Office RD:</strong> 6.5% per annum (compound quarterly) - senior citizens get
-                            6.7%</li>
-                        <li><strong>SBI RD:</strong> 6.5% to 7.0% (varies by tenure, 1-10 years)</li>
-                        <li><strong>HDFC Bank RD:</strong> 6.0% to 7.0% (tenure-based, senior citizens +0.5%)</li>
-                        <li><strong>ICICI Bank RD:</strong> 6.0% to 6.75% (flexible monthly deposits)</li>
-                        <li><strong>Punjab National Bank:</strong> 6.5% to 7.25% (1-10 year tenure options)</li>
-                        <li><strong>Bank of Baroda:</strong> 6.5% to 7.15% (competitive for long tenures)</li>
-                    </ul>
-
-                    <p><strong>Pro Tip:</strong> Small finance banks and NBFCs sometimes offer 7.5-8.5% but verify
-                        credibility and deposit insurance coverage.</p>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section id="faq">
-                <h2>Frequently Asked Questions (FAQ)</h2>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">1. How does our Daily Interest Calculator work?</h3>
-                    <p>This <strong>Daily Interest Calculator</strong> uses the <strong>Average Days Method</strong>.
-                        The total deposited
-                        amount is multiplied by the annual interest rate and average deposit period ((Total Days + 1) /
-                        2), then divided by 365. For example, ₹1000/day for 365 days at 6.5% earns ₹11,878 interest.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">2. What is the Average Days Method for RD calculation?</h3>
-                    <p>The Average Days Method recognizes that not all deposits earn interest for the same duration.
-                        Your first deposit earns for the full period (say 365 days), the second for 364 days, and so on.
-                        The average is calculated as (n+1)/2 days. For 365 days: (365+1)/2 = 183 average days. This is
-                        the standard method used by Indian banks and Post Office.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">3. Can I use this for Post Office Daily Interest?</h3>
-                    <p>Absolutely! This <strong>Daily Interest Calculator</strong> is perfect for Post Office Recurring
-                        Deposits. Enter your monthly
-                        deposit as daily (e.g., ₹10,000/month = ₹333/day for 30-day months), select 12 months or 365
-                        days, and use 6.5% rate. The Average Days Method matches Post Office calculation standards.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">4. What's the difference between daily deposit and lump sum FD?</h3>
-                    <p><strong>Daily Deposits (RD):</strong> You invest gradually (e.g., ₹1000/day) and interest is
-                        calculated using average days. <strong>Fixed Deposit (FD):</strong> One-time lump sum investment
-                        where entire amount earns interest for full tenure. FDs typically yield higher absolute interest
-                        as the full principal works from day one, but RDs are better for building saving discipline.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">5. Is daily deposit better than monthly RD?</h3>
-                    <p>Both earn the same interest using Average Days Method. The choice depends on your income pattern.
-                        <strong>Daily deposits</strong> suit daily wage earners, shopkeepers, and those who prefer
-                        micro-commitments. <strong>Monthly RD</strong> suits salaried individuals and is more
-                        convenient. Interest-wise, ₹1000 daily for 30 days = ₹30,000 monthly RD.
-                    </p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">6. How much will I earn on ₹500 daily deposit for 1 year?</h3>
-                    <p>At 6.5% annual interest for 365 days:</p>
-                    <ul class="formula-explanation">
-                        <li>Total Deposited: ₹500 × 365 = ₹1,82,500</li>
-                        <li>Average Days: (365+1)/2 = 183 days</li>
-                        <li>Interest: ₹1,82,500 × 6.5% × 183/365 = ₹5,939.06</li>
-                        <li><strong>Maturity: ₹1,88,439.06</strong></li>
-                    </ul>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">7. Which bank gives highest RD interest rate?</h3>
-                    <p>As of 2026, <strong>small finance banks</strong> like Ujjivan, Equitas, and AU offer 7.5-8% for
-                        RDs, higher than commercial banks (6-7%). Post Office offers competitive 6.5% with guaranteed
-                        government backing. Always compare tenure-specific rates and verify RBI deposit insurance
-                        coverage before investing.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">8. Can I withdraw RD before maturity?</h3>
-                    <p>Yes, but with penalties. Most banks allow premature withdrawal after 6 months of deposits,
-                        deducting 1-2% from the applicable interest rate. Post Office RDs can be closed after 3 years
-                        without penalty. Check your scheme's specific terms before opening the account.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">9. Is RD interest taxable in India?</h3>
-                    <p>Yes, RD interest is fully taxable under "Income from Other Sources" as per your income tax slab.
-                        Banks deduct TDS if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). Submit Form
-                        15G/15H if your total income is below taxable limit to avoid TDS deduction.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">10. What happens if I miss a daily deposit?</h3>
-                    <p>Most RD schemes allow some flexibility with grace periods. However, repeated defaults can lead to
-                        penalties (₹1-2 per ₹100 per month) or account closure. For daily deposits, consider automating
-                        through standing instructions or using digital apps that auto-debit from your bank account.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">11. Can I have multiple RD accounts?</h3>
-                    <p>Yes! You can open multiple RD accounts in the same bank or across different banks. This helps
-                        diversify tenure (some short-term, some long-term) and take advantage of different interest
-                        rates. No legal limit on number of RD accounts.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">12. Is this calculator accurate for all banks?</h3>
-                    <p>Yes, this calculator uses the standard <strong>Average Days Method</strong> prescribed by RBI and
-                        followed by all Indian banks and Post Office. However, some banks compound quarterly vs annually
-                        - for precise calculations including quarterly compounding, verify with your bank's RD
-                        calculator or interest computation method.</p>
-                </div>
-            </section>
-
-            <!-- Conclusion -->
-            <section id="conclusion">
-                <h2>Start Your Daily Deposit Journey Today</h2>
-                <p>Daily deposit schemes are one of the most accessible wealth-building tools for Indians. Whether
-                    you're saving ₹100 or ₹10,000 per day, the discipline of consistent deposits combined with
-                    compounding interest helps you achieve financial goals.</p>
-
-                <p>Use this <strong>free daily deposit calculator</strong> to:</p>
-                <ul class="formula-explanation">
-                    <li>Plan your Recurring Deposit strategy before opening an account</li>
-                    <li>Compare different deposit amounts and tenures to find your sweet spot</li>
-                    <li>Set realistic savings goals based on your daily income or budget</li>
-                    <li>Understand exactly how much you'll accumulate over time with interest</li>
-                </ul>
-
-                <p><strong>💡 Pro Tip:</strong> Use this <strong>Daily Interest Calculator</strong> to plan your
-                    Recurring Deposit strategy before opening an account. RDs offer safety and guaranteed returns,
-                    perfect for short to medium-term
-                    goals.</p>
-
-                <p>Bookmark this page and revisit whenever you need to calculate returns on daily deposits, recurring
-                    deposits, or compare different RD schemes!</p>
-            </section>
-        </article>
     </main>
 
-    <footer role="contentinfo">
-        <div class="container">
-            <nav class="footer-links" aria-label="Footer navigation">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="disclaimer.html">Disclaimer</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
-            <p>&copy; 2026 DailyInterestCalculator.in. All rights reserved. Made with 💚 for Indian Savers.</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #6b7280;">
-                <em>Disclaimer: Interest rates shown are indicative. Always verify current rates with your bank or Post
-                    Office before investing. This calculator is for educational purposes only.</em>
-            </p>
+    <!-- Content Sections -->
+    <div class="content-wrapper">
+
+      <section class="content-section">
+        <h2>What Is a Daily Interest Calculator?</h2>
+        <p>A daily interest calculator tells you exactly how much interest accrues on a sum of money for each day it
+          sits in a loan, savings account, fixed deposit, or investment. Instead of waiting for your monthly bank
+          statement, you get a clear, day-by-day picture of how interest builds — whether you're a borrower trying to
+          understand costs or a saver watching your money grow.</p>
+        <p>Most financial institutions calculate interest on a daily basis, even if they only show you the figure
+          monthly. That means the numbers are moving every single day. Our calculator brings those hidden daily
+          movements to the surface.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Simple Interest vs. Compound Interest</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>Simple Interest</h3>
+            <p>Simple interest is the most straightforward method. You earn (or owe) interest only on the original
+              principal — the amount never changes as a base. It's commonly used for short-term loans, personal loans,
+              car loans, and some government bonds.</p>
+            <div class="formula">Formula: Interest = Principal × Rate × Time (in years)</div>
+            <p><strong>Example:</strong> ₹10,000 at 8% annual rate for 90 days<br>
+              Daily interest = ₹10,000 × 8% ÷ 365 = ₹2.19 per day<br>
+              Total interest for 90 days = ₹197.26</p>
+          </div>
+          <div class="comparison-card">
+            <h3>Compound Interest</h3>
+            <p>Compound interest is where the real power of money shows up. Here, interest is added to the principal at
+              regular intervals — daily, monthly, or annually — and then that larger amount starts earning interest too.
+              Over time, this creates exponential growth (or exponential debt).</p>
+            <div class="formula">Formula: A = P × (1 + r/n)^(n×t)</div>
+            <p>Savings accounts, fixed deposits, mutual funds, and most investment vehicles use compound interest. The
+              more frequently it compounds, the faster your money grows.</p>
+            <p><em><strong>Tip:</strong> Even a difference of 0.5% in annual interest rate can translate to thousands of
+                dollars over a few years thanks to compounding.</em></p>
+          </div>
         </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Using the daily interest calculator takes less than 30 seconds:</p>
+        <ol class="steps-list">
+          <li><strong>Enter your principal</strong> — This is the starting amount. For a loan, it's what you borrowed.
+            For savings, it's what you deposited.</li>
+          <li><strong>Enter the annual interest rate</strong> — Use the rate shown on your loan agreement or bank
+            account. Enter it as a percentage (e.g., 7.5 for 7.5%).</li>
+          <li><strong>Enter the number of days</strong> — How many days does the interest period cover? You can also
+            pick a start and end date and let the calculator count the days automatically.</li>
+          <li><strong>Choose your mode</strong> — Select Simple Interest for straightforward calculations, or Compound
+            Interest and choose how often it compounds (daily, monthly, quarterly, etc.).</li>
+          <li><strong>Click Calculate</strong> — Instantly see your daily interest, total interest, final amount, and a
+            full period breakdown.</li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Who Uses a Daily Interest Calculator?</h2>
+        <div class="users-grid">
+          <div class="user-item">
+            <h4>Borrowers</h4>
+            <p>Knowing your daily interest cost helps you plan prepayments, avoid penalties, and understand exactly what
+              you're paying for. Even a single extra payment can cut days or weeks of interest.</p>
+          </div>
+          <div class="user-item">
+            <h4>Savers & Investors</h4>
+            <p>Comparing accounts? A fixed deposit vs. a recurring deposit? Use this calculator to see which one
+              actually puts more money in your pocket, factoring in compounding frequency.</p>
+          </div>
+          <div class="user-item">
+            <h4>Businesses</h4>
+            <p>Short-term loans and lines of credit often charge daily interest. Finance managers use daily calculations
+              to manage cash flow and forecast costs.</p>
+          </div>
+          <div class="user-item">
+            <h4>Legal & Accounting</h4>
+            <p>Calculating interest on overdue payments, court judgments, or tax liabilities often requires precise
+              daily interest figures.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Key Terms Explained</h2>
+        <dl class="terms-list">
+          <div>
+            <dt>Principal</dt>
+            <dd>The original sum of money on which interest is calculated. In a loan, it's the amount you borrowed. In
+              savings, it's your initial deposit.</dd>
+          </div>
+          <div>
+            <dt>Annual Interest Rate (APR)</dt>
+            <dd>The yearly percentage rate charged or earned. Our calculator converts annual rates to daily equivalents
+              automatically.</dd>
+          </div>
+          <div>
+            <dt>Compounding Frequency</dt>
+            <dd>How often accumulated interest is added to your principal (Daily, Monthly, Quarterly, or Annually).</dd>
+          </div>
+          <div>
+            <dt>Total Amount</dt>
+            <dd>Principal plus all interest accrued over the period. This is the amount you'd receive at maturity or owe
+              at the end.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Examples</h2>
+        <div class="examples-grid">
+          <div class="example-box">
+            <h4>Example 1: Personal Loan</h4>
+            <p>₹25,000 at 12% annual interest on a simple interest basis for 60 days.</p>
+            <ul>
+              <li>Daily interest: ₹8.22/day</li>
+              <li>Total for 60 days: ₹493.15</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <h4>Example 2: Fixed Deposit</h4>
+            <p>₹50,000 at 6.5% p.a., compounded monthly, for 180 days.</p>
+            <ul>
+              <li>Total interest earned: ₹1,622.73</li>
+              <li>Maturity amount: ₹51,622.73</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Tips to Reduce Interest Costs</h2>
+        <ul class="tips-list">
+          <li><strong>Make early or extra payments.</strong> Every rupee you pay back early cuts the base on which
+            interest is calculated.</li>
+          <li><strong>Negotiate your rate.</strong> Even a 0.5% reduction can save hundreds of rupees over a single
+            year.</li>
+          <li><strong>Choose daily compounding for savings, not loans.</strong> Earn more on savings, but avoid it when
+            borrowing if possible.</li>
+          <li><strong>Watch the number of days.</strong> Confirm if your lender uses 360 or 365 days, as it affects the
+            effective daily rate.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Daily Interest Rate Quick Reference</h2>
+        <div class="table-scroll">
+          <table class="reference-table">
+            <thead>
+              <tr>
+                <th>Annual Rate</th>
+                <th>Daily Rate</th>
+                <th>Daily Interest on ₹10,000</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3%</td>
+                <td>0.00822%</td>
+                <td>₹0.82</td>
+              </tr>
+              <tr>
+                <td>5%</td>
+                <td>0.01370%</td>
+                <td>₹1.37</td>
+              </tr>
+              <tr>
+                <td>8%</td>
+                <td>0.02192%</td>
+                <td>₹2.19</td>
+              </tr>
+              <tr>
+                <td>10%</td>
+                <td>0.02740%</td>
+                <td>₹2.74</td>
+              </tr>
+              <tr>
+                <td>15%</td>
+                <td>0.04110%</td>
+                <td>₹4.11</td>
+              </tr>
+              <tr>
+                <td>18%</td>
+                <td>0.04932%</td>
+                <td>₹4.93</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          <details>
+            <summary>How is daily interest calculated?</summary>
+            <p>Daily interest is calculated by dividing your annual interest rate by 365 and multiplying by your
+              principal. For simple interest: Daily Interest = Principal × (Annual Rate ÷ 365).</p>
+          </details>
+          <details>
+            <summary>Can I use this for credit card interest?</summary>
+            <p>Yes. Most credit cards compound interest daily. Enter your balance as principal, APR as annual rate, and
+              select Compound Interest with Daily frequency.</p>
+          </details>
+          <details>
+            <summary>Does early loan repayment save money?</summary>
+            <p>Absolutely. Since interest accrues daily on the remaining principal, every extra payment reduces your
+              interest charges the very next day.</p>
+          </details>
+          <details>
+            <summary>What is the Rule of 72?</summary>
+            <p>Divide 72 by your annual interest rate to estimate how many years it takes for your money to double with
+              compound interest. At 6%, it takes about 12 years.</p>
+          </details>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cookies.html">Cookie Policy</a>
+      </div>
+      <p>This daily interest calculator is provided for educational and informational purposes only. Results are based
+        on the values you enter and standard mathematical formulas for simple and compound interest. They do not account
+        for taxes, fees, loan origination costs, payment schedules, or other factors that may affect your actual
+        financial outcomes.</p>
+      <p>This tool does not constitute financial, legal, or investment advice. Always consult a qualified financial
+        advisor, accountant, or legal professional before making financial decisions. Interest rates and terms vary
+        significantly by lender, institution, and country. Confirm all rates and calculation conventions with your
+        financial institution before relying on any figures for contractual or legal purposes.</p>
     </footer>
 
-    <script src="js/calculator.js"></script>
-</body>
+  </div>
 
+  <script src="js/calculator.js"></script>
+</body>
 
 </html>
