@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="7" fill="#ff9933"/>
+  <!-- Letter D in white -->
+  <text
+    x="5"
+    y="24"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="22"
+    font-weight="700"
+    fill="#ffffff"
+    letter-spacing="-1">DI</text>
+  <!-- Small green dot accent -->
+  <circle cx="27" cy="7" r="4" fill="#128807"/>
+</svg>
