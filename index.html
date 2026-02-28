@@ -4,15 +4,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Interest Calculator — Calculate Simple & Compound Interest Per Day</title>
+  <title>Daily Interest Calculator (Simple & Compound)</title>
   <meta name="description"
-    content="Calculate daily interest on loans, savings, and investments in seconds. Support for simple and compound interest with multiple currencies including ₹ (INR), $ (USD), and more." />
+    content="Free daily interest calculator. Calculate simple and compound interest instantly. Get accurate results for loans, savings, and investments." />
   <link rel="canonical" href="https://dailyinterestcalculator.in/" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32" />
+  <link rel="shortcut icon" href="assets/favicon.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DailyInterestCalculator.in" />
+  <meta property="og:title" content="Daily Interest Calculator (Simple & Compound)" />
+  <meta property="og:description"
+    content="Free daily interest calculator. Calculate simple and compound interest instantly. Get accurate results for loans, savings, and investments." />
+  <meta property="og:url" content="https://dailyinterestcalculator.in/" />
+  <meta property="og:image" content="https://dailyinterestcalculator.in/assets/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Daily Interest Calculator (Simple & Compound)" />
+  <meta name="twitter:description"
+    content="Free daily interest calculator. Calculate simple and compound interest instantly. Get accurate results for loans, savings, and investments." />
+  <meta name="twitter:image" content="https://dailyinterestcalculator.in/assets/og-image.png" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Non-blocking font load -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+  <script>
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "vnphy4eolg");
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29CHHJYC7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-N29CHHJYC7');
+  </script>
 </head>
 
 <body>
@@ -26,16 +64,19 @@
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <span class="logo-icon">◈</span>
+        <img src="assets/favicon.png" alt="Daily Interest Calculator Logo" class="logo-img" width="32" height="32"
+          loading="lazy" />
         <span class="logo-text">DailyInterestCalculator<em>.in</em></span>
       </div>
-      <h1 class="hero-headline">Stop Guessing. See Your Exact Daily Interest in Seconds.</h1>
-      <p class="tagline">Calculate daily interest on loans, savings, and investments in seconds. Simple interest,
-        compound interest, and full period breakdowns — all in one place.</p>
+      <h1 class="hero-headline">Daily Interest Calculator</h1>
+      <p class="hero-sub">Simple &amp; Compound Interest — Calculated Per Day, Instantly.</p>
+      <p class="tagline">Enter your principal, rate, and number of days to see exactly how much interest accrues —
+        perfect for
+        Fixed Deposits (FDs), Savings Accounts, and Credit Cards.</p>
     </header>
 
     <!-- Main Card -->
-    <main class="card">
+    <main class="card" aria-label="Daily Interest Calculator">
 
       <div class="card-label">CALCULATOR</div>
 
@@ -65,51 +106,120 @@
         <div class="field">
           <label for="principal">Principal Amount</label>
           <div class="input-wrap">
-            <span class="input-prefix" id="currency-symbol">₹</span>
-            <input type="number" id="principal" placeholder="1,00,000" min="0" step="any" />
+            <span class="input-prefix" id="currency-symbol" aria-hidden="true">₹</span>
+            <input type="number" id="principal" placeholder="1,00,000" min="0" step="any" autocomplete="off"
+              aria-describedby="principal-error" aria-label="Principal amount" />
           </div>
+          <span class="error-msg" id="principal-error" role="alert" aria-live="polite"></span>
         </div>
 
         <div class="field">
           <label for="rate">Annual Interest Rate</label>
           <div class="input-wrap">
-            <input type="number" id="rate" placeholder="10.5" min="0" step="any" />
-            <span class="input-suffix">%</span>
+            <input type="number" id="rate" placeholder="10.5" min="0" step="any" autocomplete="off"
+              aria-describedby="rate-error" aria-label="Annual interest rate in percent" />
+            <span class="input-suffix" aria-hidden="true">%</span>
+          </div>
+          <span class="error-msg" id="rate-error" role="alert" aria-live="polite"></span>
+        </div>
+
+
+      </div>
+
+
+      <!-- Days / Date-Range Mode Toggle + Panels -->
+      <div class="days-section">
+
+        <!-- Sliding pill toggle -->
+        <div class="days-mode-toggle" role="tablist" aria-label="Days input method">
+          <button class="days-mode-btn active" data-panel="manual" role="tab" aria-selected="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+            </svg>
+            Enter Days
+          </button>
+          <button class="days-mode-btn" data-panel="daterange" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            Date Range
+          </button>
+        </div>
+
+        <!-- Panel 1: Manual days input -->
+        <div class="days-panel" id="panel-manual" role="tabpanel">
+          <div class="field">
+            <div class="input-wrap">
+              <input type="number" id="days" placeholder="365" min="1" max="3650" step="1" inputmode="numeric"
+                pattern="[0-9]*" autocomplete="off" aria-describedby="days-error"
+                aria-label="Number of days for interest calculation" />
+            </div>
+            <span class="error-msg" id="days-error" role="alert" aria-live="polite"></span>
           </div>
         </div>
 
-        <div class="field">
-          <label for="days">Number of Days</label>
-          <div class="input-wrap">
-            <input type="number" id="days" placeholder="365" min="1" step="1" />
-            <span class="input-suffix">days</span>
-          </div>
-        </div>
+        <!-- Panel 2: Date range dropdown -->
+        <div class="days-panel hidden" id="panel-daterange" role="tabpanel">
+          <div class="date-range">
+            <div class="input-wrap select-wrap">
+              <select id="date-preset" aria-label="Select a date range preset">
+                <option value="" disabled selected>— Select a date range —</option>
+                <optgroup label="Short-Term">
+                  <option value="7">Last 7 days</option>
+                  <option value="14">Last 14 days</option>
+                  <option value="30">Last 30 days</option>
+                  <option value="60">Last 60 days</option>
+                  <option value="90">Last 90 days</option>
+                </optgroup>
+                <optgroup label="Medium-Term">
+                  <option value="120">Last 120 days</option>
+                  <option value="180">Last 6 months</option>
+                  <option value="270">Last 9 months</option>
+                  <option value="365">Last 1 year</option>
+                </optgroup>
+                <optgroup label="Long-Term">
+                  <option value="545">Last 18 months</option>
+                  <option value="730">Last 2 years</option>
+                  <option value="1095">Last 3 years</option>
+                  <option value="1825">Last 5 years</option>
+                </optgroup>
+                <optgroup label="Custom">
+                  <option value="custom">Custom date range…</option>
+                </optgroup>
+              </select>
+              <span class="select-arrow">▾</span>
+            </div>
 
-        <div class="field compound-only hidden">
-          <label for="freq">Compounding Frequency</label>
-          <div class="input-wrap select-wrap">
-            <select id="freq">
-              <option value="365">Daily</option>
-              <option value="12">Monthly</option>
-              <option value="4">Quarterly</option>
-              <option value="2">Semi-Annually</option>
-              <option value="1">Annually</option>
-            </select>
-            <span class="select-arrow">▾</span>
+            <!-- Custom date pickers — only shown when 'Custom' is selected -->
+            <div class="date-custom-row hidden" id="date-custom-row">
+              <input type="date" id="start-date" />
+              <span class="date-sep">→</span>
+              <input type="date" id="end-date" />
+              <button class="date-apply" id="apply-dates">Apply</button>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Date range helper -->
-      <div class="date-range">
-        <span class="date-label">Or pick a date range:</span>
-        <div class="date-inputs">
-          <input type="date" id="start-date" />
-          <span class="date-sep">→</span>
-          <input type="date" id="end-date" />
-          <button class="date-apply" id="apply-dates">Apply</button>
+      <!-- Compounding Frequency (compound-only) -->
+      <div class="field compound-only hidden" style="margin-bottom:20px;">
+        <label for="freq">Compounding Frequency</label>
+        <div class="input-wrap select-wrap">
+          <select id="freq">
+            <option value="365">Daily</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="2">Semi-Annually</option>
+            <option value="1">Annually</option>
+          </select>
+          <span class="select-arrow">▾</span>
         </div>
       </div>
 
@@ -127,21 +237,17 @@
         <div class="results-divider"><span>Results</span></div>
 
         <div class="results-grid">
-          <div class="result-card accent">
-            <div class="result-label">Daily Interest</div>
-            <div class="result-value" id="res-daily">—</div>
-          </div>
           <div class="result-card">
-            <div class="result-label">Total Interest</div>
+            <div class="result-label">Principal Amount</div>
+            <div class="result-value" id="res-principal">—</div>
+          </div>
+          <div class="result-card accent">
+            <div class="result-label">Interest Earned</div>
             <div class="result-value" id="res-interest">—</div>
           </div>
           <div class="result-card">
-            <div class="result-label">Total Amount</div>
+            <div class="result-label">Total Value</div>
             <div class="result-value" id="res-total">—</div>
-          </div>
-          <div class="result-card">
-            <div class="result-label">Effective Daily Rate</div>
-            <div class="result-value" id="res-eff-rate">—</div>
           </div>
         </div>
 
@@ -218,12 +324,12 @@
           <div class="comparison-card">
             <h3>Simple Interest</h3>
             <p>Simple interest is the most straightforward method. You earn (or owe) interest only on the original
-              principal — the amount never changes as a base. It's commonly used for short-term loans, personal loans,
-              car loans, and some government bonds.</p>
+              principal — the base amount never changes. It's commonly used for short-term personal loans, car loans,
+              and RBI/government bonds.</p>
             <div class="formula">Formula: Interest = Principal × Rate × Time (in years)</div>
-            <p><strong>Example:</strong> ₹10,000 at 8% annual rate for 90 days<br>
-              Daily interest = ₹10,000 × 8% ÷ 365 = ₹2.19 per day<br>
-              Total interest for 90 days = ₹197.26</p>
+            <p><strong>Example:</strong> ₹1,00,000 at 8% annual rate for 90 days<br>
+              Daily interest = ₹1,00,000 × 8% ÷ 365 = ₹21.91 per day<br>
+              Total interest for 90 days = ₹1,972.60</p>
           </div>
           <div class="comparison-card">
             <h3>Compound Interest</h3>
@@ -231,10 +337,12 @@
               regular intervals — daily, monthly, or annually — and then that larger amount starts earning interest too.
               Over time, this creates exponential growth (or exponential debt).</p>
             <div class="formula">Formula: A = P × (1 + r/n)^(n×t)</div>
-            <p>Savings accounts, fixed deposits, mutual funds, and most investment vehicles use compound interest. The
+            <p>Savings accounts, Fixed Deposits (FDs), Mutual Funds, and most investment vehicles use compound interest.
+              The
               more frequently it compounds, the faster your money grows.</p>
-            <p><em><strong>Tip:</strong> Even a difference of 0.5% in annual interest rate can translate to thousands of
-                dollars over a few years thanks to compounding.</em></p>
+            <p><em><strong>Tip:</strong> Even a difference of 0.5% in an FD annual interest rate can translate to lakhs
+                of
+                rupees over a few years thanks to compounding.</em></p>
           </div>
         </div>
       </section>
@@ -243,16 +351,16 @@
         <h2>How to Use This Calculator</h2>
         <p>Using the daily interest calculator takes less than 30 seconds:</p>
         <ol class="steps-list">
-          <li><strong>Enter your principal</strong> — This is the starting amount. For a loan, it's what you borrowed.
-            For savings, it's what you deposited.</li>
+          <li><strong>Enter your principal</strong> — This is your starting amount (e.g., ₹5,00,000). For a personal
+            loan, it's what you borrowed. For an FD or Mutual Fund, it's what you deposited.</li>
           <li><strong>Enter the annual interest rate</strong> — Use the rate shown on your loan agreement or bank
-            account. Enter it as a percentage (e.g., 7.5 for 7.5%).</li>
-          <li><strong>Enter the number of days</strong> — How many days does the interest period cover? You can also
-            pick a start and end date and let the calculator count the days automatically.</li>
-          <li><strong>Choose your mode</strong> — Select Simple Interest for straightforward calculations, or Compound
-            Interest and choose how often it compounds (daily, monthly, quarterly, etc.).</li>
-          <li><strong>Click Calculate</strong> — Instantly see your daily interest, total interest, final amount, and a
-            full period breakdown.</li>
+            account (e.g., 7.5 for 7.5% p.a.).</li>
+          <li><strong>Enter the number of days</strong> — How long is the tenure? You can also pick a start and end date
+            and let the calculator count the exact days automatically.</li>
+          <li><strong>Choose your mode</strong> — Select Simple Interest for straightforward personal loans, or Compound
+            Interest for FDs and Credit Cards, then choose how often it compounds.</li>
+          <li><strong>Click Calculate</strong> — Instantly see your daily interest, total interest earned, principal
+            amount, and a total maturity value breakdown.</li>
         </ol>
       </section>
 
@@ -260,24 +368,25 @@
         <h2>Who Uses a Daily Interest Calculator?</h2>
         <div class="users-grid">
           <div class="user-item">
-            <h4>Borrowers</h4>
-            <p>Knowing your daily interest cost helps you plan prepayments, avoid penalties, and understand exactly what
-              you're paying for. Even a single extra payment can cut days or weeks of interest.</p>
+            <h4>Borrowers (Personal Loans & Equities)</h4>
+            <p>Knowing your exact daily interest cost helps you plan EMIs, make smart prepayments, and avoid penalties.
+              Even a single extra payment can cut days or weeks of interest off a high-cost personal loan.</p>
           </div>
           <div class="user-item">
             <h4>Savers & Investors</h4>
-            <p>Comparing accounts? A fixed deposit vs. a recurring deposit? Use this calculator to see which one
-              actually puts more money in your pocket, factoring in compounding frequency.</p>
+            <p>Comparing accounts? Deciding between an FD and a Recurring Deposit (RD)? Use this calculator to see which
+              one actually puts more money in your pocket, factoring in compounding frequency.</p>
           </div>
           <div class="user-item">
             <h4>Businesses</h4>
-            <p>Short-term loans and lines of credit often charge daily interest. Finance managers use daily calculations
-              to manage cash flow and forecast costs.</p>
+            <p>Short-term business loans, overdraft facilities, and supplier lines of credit often charge daily
+              interest. Finance managers use daily calculations to manage cash flow and forecast GST/cost implications.
+            </p>
           </div>
           <div class="user-item">
             <h4>Legal & Accounting</h4>
-            <p>Calculating interest on overdue payments, court judgments, or tax liabilities often requires precise
-              daily interest figures.</p>
+            <p>Calculating interest on overdue client payments, court judgments, or delayed tax/GST liabilities often
+              requires precise daily interest tracking.</p>
           </div>
         </div>
       </section>
@@ -356,34 +465,34 @@
             </thead>
             <tbody>
               <tr>
-                <td>3%</td>
-                <td>0.00822%</td>
-                <td>₹0.82</td>
+                <td>4% (Savings A/c)</td>
+                <td>0.01096%</td>
+                <td>₹1.10</td>
               </tr>
               <tr>
-                <td>5%</td>
-                <td>0.01370%</td>
-                <td>₹1.37</td>
+                <td>7.5% (FD)</td>
+                <td>0.02055%</td>
+                <td>₹2.05</td>
               </tr>
               <tr>
-                <td>8%</td>
-                <td>0.02192%</td>
-                <td>₹2.19</td>
+                <td>12% (Mutual Funds)</td>
+                <td>0.03288%</td>
+                <td>₹3.29</td>
               </tr>
               <tr>
-                <td>10%</td>
-                <td>0.02740%</td>
-                <td>₹2.74</td>
-              </tr>
-              <tr>
-                <td>15%</td>
+                <td>15% (Personal Loan)</td>
                 <td>0.04110%</td>
                 <td>₹4.11</td>
               </tr>
               <tr>
-                <td>18%</td>
-                <td>0.04932%</td>
-                <td>₹4.93</td>
+                <td>36% (Credit Card)</td>
+                <td>0.09863%</td>
+                <td>₹9.86</td>
+              </tr>
+              <tr>
+                <td>42% (Credit Card)</td>
+                <td>0.11507%</td>
+                <td>₹11.51</td>
               </tr>
             </tbody>
           </table>
@@ -394,24 +503,45 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-accordion">
           <details>
-            <summary>How is daily interest calculated?</summary>
-            <p>Daily interest is calculated by dividing your annual interest rate by 365 and multiplying by your
-              principal. For simple interest: Daily Interest = Principal × (Annual Rate ÷ 365).</p>
+            <summary>How to find rate of interest?</summary>
+            <p>You can find the annual rate of interest mentioned in your loan agreement, Fixed Deposit (FD)
+              certificate, or credit card statement. It is typically expressed as a percentage per annum (p.a.). If you
+              know your principal, total interest paid, and time period, you can find the simple interest rate
+              mathematically using: Rate = (Interest × 100) ÷ (Principal × Time).</p>
           </details>
           <details>
-            <summary>Can I use this for credit card interest?</summary>
-            <p>Yes. Most credit cards compound interest daily. Enter your balance as principal, APR as annual rate, and
-              select Compound Interest with Daily frequency.</p>
+            <summary>How to calculate compound daily interest?</summary>
+            <p>To calculate daily compound interest manually, use the formula A = P(1 + r/365)^(365×t), where A is the
+              total maturity amount, P is the principal, r is the annual rate (in decimal), and t is time in years.
+              Because doing this by hand for hundreds of days is complex, our daily interest calculator instantly
+              processes this math for you.</p>
           </details>
           <details>
-            <summary>Does early loan repayment save money?</summary>
-            <p>Absolutely. Since interest accrues daily on the remaining principal, every extra payment reduces your
-              interest charges the very next day.</p>
+            <summary>How to compute interest compounded daily?</summary>
+            <p>Computing interest compounded daily means taking your annual rate, dividing it by 365 to get the "daily
+              rate", and applying that tiny percentage to your balance every single day. Crucially, each day's interest
+              is added back to your balance, meaning the next day you earn interest on an ever-slightly larger amount.
+            </p>
           </details>
           <details>
-            <summary>What is the Rule of 72?</summary>
-            <p>Divide 72 by your annual interest rate to estimate how many years it takes for your money to double with
-              compound interest. At 6%, it takes about 12 years.</p>
+            <summary>What does compounded daily mean?</summary>
+            <p>Compounded daily means that your financial institution (bank, lender, or credit card company) calculates
+              your interest at the end of every day and immediately adds it to your principal balance. It ensures your
+              money grows (or your debt increases) far faster than if interest was only calculated monthly or annually.
+            </p>
+          </details>
+          <details>
+            <summary>How to calculate daily interest on a loan?</summary>
+            <p>For a simple daily interest loan, divide your Annual Percentage Rate (APR) by 365 to get your daily
+              interest rate. Multiply that daily rate by your outstanding loan balance. The result is exactly how much
+              that loan costs you in interest for that single day.</p>
+          </details>
+          <details>
+            <summary>How to convert daily interest rate to annual?</summary>
+            <p>To convert a simple daily interest rate to an annual rate, multiply the daily percentage by 365. For
+              example, if your daily rate is 0.05%, your annual rate is 0.05% × 365 = 18.25% p.a. If the interest is
+              compounding daily, use the effective annual yield formula: Effective Annual Rate = (1 + Daily Rate)^365 -
+              1.</p>
           </details>
         </div>
       </section>
@@ -439,7 +569,7 @@
 
   </div>
 
-  <script src="js/calculator.js"></script>
+  <script src="js/calculator.min.js" defer></script>
 </body>
 
 </html>
