@@ -1,7 +1,7 @@
 /* ============================================
    DAILY INTEREST CALCULATOR — style.css
-   Aesthetic: Dark editorial / financial precision
-   Fonts: DM Serif Display + DM Mono
+   Aesthetic: Clean / modern financial
+   Fonts: Inter (Sans-Serif) + Tabular Nums
    ============================================ */
 
 *,
@@ -28,8 +28,9 @@
   --text-muted: #6e6e73;
   --text-dim: #a1a1a6;
   --error: #ff3b30;
-  --serif: 'DM Serif Display', Georgia, serif;
-  --mono: 'DM Mono', 'Courier New', monospace;
+  --serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Tabular nums for data columns */
   --radius: 12px;
   --radius-lg: 20px;
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -44,6 +45,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -187,6 +189,7 @@ body {
   border-radius: 7px;
   color: var(--text-muted);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 13px;
   cursor: pointer;
   transition: var(--transition);
@@ -257,6 +260,7 @@ body {
   border-radius: var(--radius);
   color: var(--text);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 15px;
   padding: 12px 40px 12px 14px;
   outline: none;
@@ -274,7 +278,7 @@ body {
   color: var(--text-dim);
 }
 
-.input-wrap input:not(:placeholder-shown) {
+.input-wrap:has(.input-suffix) input {
   padding-right: 50px;
 }
 
@@ -308,13 +312,151 @@ body {
   display: none;
 }
 
+/* ── Days Section Wrapper ──────────────────────────────────────────────────── */
+.days-section {
+  margin-bottom: 20px;
+}
+
+/* ── Days Input Mode Toggle (pill, matches Simple/Compound style) ────────── */
+.days-mode-toggle {
+  display: flex;
+  gap: 6px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 12px;
+}
+
+.days-mode-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.days-mode-btn svg {
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.days-mode-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 153, 51, 0.3);
+}
+
+.days-mode-btn:not(.active):hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Days Panels ─────────────────────────────────────────────────────────── */
+.days-panel {
+  animation: fadeUp 0.22s ease both;
+}
+
+.days-panel.hidden {
+  display: none;
+}
+
+/* Remove extra bottom-margin from .date-range when inside a panel */
+.days-panel .date-range {
+  margin-bottom: 0;
+}
+
+.days-slider-block {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px 14px;
+  margin-bottom: 20px;
+  transition: border-color var(--transition);
+}
+
+.days-slider-block:focus-within {
+  border-color: var(--accent);
+}
+
+.days-slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.days-slider-header label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.days-value-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px 4px 8px;
+  transition: border-color var(--transition);
+}
+
+.days-value-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.12);
+}
+
+.days-value-wrap input[type="number"] {
+  width: 60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--text);
+  text-align: right;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.days-value-wrap input[type="number"]::-webkit-inner-spin-button,
+.days-value-wrap input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.days-unit {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 2px;
+}
+
 /* Date Range */
 .date-range {
   background: var(--surface2);
   border: 1px dashed var(--border);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 12px 14px;
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .date-label {
@@ -339,6 +481,7 @@ body {
   border-radius: 8px;
   color: var(--text);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 13px;
   padding: 8px 12px;
   outline: none;
@@ -364,6 +507,7 @@ body {
   border-radius: 8px;
   color: var(--text-muted);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 12px;
   padding: 8px 14px;
   cursor: pointer;
@@ -377,6 +521,42 @@ body {
   color: var(--accent);
 }
 
+/* Custom date row — shown only when 'Custom' preset is selected */
+.date-custom-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.2s ease both;
+}
+
+.date-custom-row.hidden {
+  display: none;
+}
+
+.date-custom-row input[type="date"] {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  padding: 8px 12px;
+  outline: none;
+  cursor: pointer;
+  color-scheme: light;
+  flex: 1;
+  min-width: 130px;
+  transition: border-color var(--transition);
+}
+
+.date-custom-row input[type="date"]:focus {
+  border-color: var(--accent);
+}
+
+
+
 /* Calculate Button */
 .calc-btn {
   width: 100%;
@@ -386,6 +566,7 @@ body {
   border-radius: var(--radius);
   padding: 16px 24px;
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -418,6 +599,11 @@ body {
 
 .calc-btn:active {
   transform: translateY(0);
+}
+
+.calc-btn.calculating {
+  opacity: 0.75;
+  cursor: wait;
 }
 
 .calc-btn svg {
@@ -462,7 +648,7 @@ body {
 /* Results Grid */
 .results-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -480,8 +666,8 @@ body {
 }
 
 .result-card.accent {
-  background: rgba(255, 153, 51, 0.05);
-  border-color: rgba(255, 153, 51, 0.2);
+  background: var(--accent2);
+  border-color: var(--accent2);
 }
 
 .result-label {
@@ -492,6 +678,10 @@ body {
   margin-bottom: 8px;
 }
 
+.result-card.accent .result-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .result-value {
   font-family: var(--serif);
   font-size: 24px;
@@ -500,7 +690,7 @@ body {
 }
 
 .result-card.accent .result-value {
-  color: var(--accent);
+  color: #ffffff;
 }
 
 /* Interest Bar */
@@ -538,6 +728,10 @@ body {
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.bar-principal.full {
+  border-radius: 4px;
+}
+
 .bar-interest {
   height: 100%;
   background: var(--accent);
@@ -551,6 +745,7 @@ body {
   font-size: 12px;
   color: var(--text-muted);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
 }
 
 /* Breakdown */
@@ -589,6 +784,7 @@ body {
   border: none;
   color: var(--text-dim);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 11px;
   padding: 4px 10px;
   border-radius: 6px;
@@ -650,6 +846,7 @@ body {
   border-radius: var(--radius);
   color: var(--text-muted);
   font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
   font-size: 13px;
   padding: 10px 20px;
   cursor: pointer;
@@ -665,13 +862,39 @@ body {
 
 /* Footer */
 /* Hero Headline */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .hero-headline {
   font-family: var(--serif);
   font-size: 42px;
   line-height: 1.1;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  opacity: 0.9;
 }
 
 @media (max-width: 680px) {
@@ -795,7 +1018,8 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   margin-bottom: 12px;
-  overflow: hidden;
+  /* overflow:hidden removed — clips ::after pseudo-content in Safari.
+     Border-radius is preserved; inner content handles its own corners. */
 }
 
 .faq-accordion summary {
@@ -822,6 +1046,8 @@ body {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+  /* Ensure last paragraph respects the details border-radius */
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 
 .footer {
@@ -904,17 +1130,47 @@ body {
   animation: countUp 0.4s ease both;
 }
 
+/* Shake animation (was previously injected via JS — now in stylesheet) */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+/* Accessible error messages */
+.error-msg {
+  font-size: 11px;
+  color: var(--error);
+  margin-top: 4px;
+  min-height: 16px;
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+
 /* Validation */
 .input-wrap.error input,
 .input-wrap.error select {
   border-color: var(--error);
   box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
-}
-
-.error-msg {
-  font-size: 11px;
-  color: var(--error);
-  margin-top: -4px;
 }
 
 /* Responsive */
