@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FIX #11: Title trimmed to 55 chars (was 72 — caused SERP truncation) -->
+  <title>Daily Compound Interest Calculator | Free &amp; Accurate</title>
+
+  <meta name="description"
+    content="Free daily compound interest calculator. Calculate how your money grows with daily compounding. Get accurate results for savings, FDs, and investments." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dailyinterestcalculator.in/daily-compound-interest-calculator/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" sizes="32x32" />
+  <link rel="shortcut icon" href="../assets/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DailyInterestCalculator.in" />
+  <!-- FIX #12: og:title now aligned with page title (was truncated, missing keyword tail) -->
+  <meta property="og:title" content="Daily Compound Interest Calculator | Free &amp; Accurate" />
+  <meta property="og:description"
+    content="Free daily compound interest calculator. Calculate how your money grows with daily compounding. Get accurate results for savings, FDs, and investments." />
+  <meta property="og:url" content="https://dailyinterestcalculator.in/daily-compound-interest-calculator/" />
+  <meta property="og:image" content="https://dailyinterestcalculator.in/assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Daily Compound Interest Calculator | Free &amp; Accurate" />
+  <meta name="twitter:description"
+    content="Free daily compound interest calculator. Calculate how your money grows with daily compounding. Get accurate results for savings, FDs, and investments." />
+  <meta name="twitter:image" content="https://dailyinterestcalculator.in/assets/og-image.png" />
+
+  <!-- FIX #9 + #13: FAQPage schema + SoftwareApplication schema — enables Google rich results -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Daily Compound Interest Calculator",
+      "description": "Free online calculator that computes daily compound interest using the standard A = P(1 + r/n)^(nt) formula. Supports multiple currencies, date-range input, and CSV export.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://dailyinterestcalculator.in/daily-compound-interest-calculator/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dailyinterestcalculator.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Daily Compound Interest Calculator" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do Indian banks really compound interest daily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. As per RBI guidelines, most savings accounts in India calculate interest on your daily closing balance. However, the interest is usually credited to your account only once every quarter (every 3 months)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is daily compounding better than monthly compounding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. The more frequently your money compounds, the faster it grows. Daily compounding is mathematically superior to weekly, monthly, or yearly compounding because your interest starts earning its own interest much sooner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for my Fixed Deposits (FDs)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! While many FDs compound quarterly, some specialized FDs and reinvestment plans use daily compounding. Using this calculator will give you the most aggressive growth estimate possible for your investment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is considered a good daily interest rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Interest rates are almost always quoted annually. If a bank offers 7% per year, the daily rate is roughly 0.019%. Look for the highest Annual Rate (APY) that offers daily compounding rather than searching for a daily rate directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this calculator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this calculator is 100% free with no hidden charges, required account sign-ups, or usage limits. Use it as often as you need to plan your financial goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool account for taxes like TDS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This calculator shows your gross (total) interest earned. In India, banks deduct Tax Deducted at Source (TDS) if your interest crosses a certain limit (currently Rs 40,000 for regular individuals). You will need to calculate your tax separately depending on your tax slab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Simple Interest and Compound Interest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple interest gives you a fixed return based only on your starting money. Compound interest gives you returns on both your starting money AND the interest already earned. Compounding is much better for long-term wealth building."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
+  <!-- FIX #10: GA4 loader script was completely missing — gtag() calls were firing into a void -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29CHHJYC7"></script>
+  <script src="js/analytics.js" defer></script>
+</head>
+
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="wrapper">
+
+    <!-- Header — logo + tagline only (h1 moved inside <main> per FIX #14) -->
+    <header class="header">
+      <div class="logo">
+        <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <img src="../assets/favicon.png" alt="Daily Interest Calculator Logo" class="logo-img" width="32" height="32"
+            loading="lazy" />
+          <span class="logo-text">DailyInterestCalculator<em>.in</em></span>
+        </a>
+      </div>
+      <p class="hero-sub">Grow Your Wealth — Compound Interest Calculated Per Day.</p>
+      <p class="tagline">Enter your principal, rate, and number of days to see the power of daily compounding —
+        perfect for Fixed Deposits (FDs), Savings Accounts, and modern investments.</p>
+    </header>
+
+    <!-- Main Card -->
+    <main class="card" aria-label="Daily Compound Interest Calculator">
+
+      <!-- FIX #14: h1 is now inside <main> — correct SEO document outline -->
+      <h1 class="hero-headline">Daily Compound Interest Calculator</h1>
+
+      <div class="card-label">DAILY COMPOUND CALCULATOR</div>
+
+      <!-- Mode Toggle -->
+      <div class="mode-toggle">
+        <a href="../index.html" class="mode-btn">Simple Interest</a>
+        <a href="index.html" class="mode-btn active">Daily Compound</a>
+      </div>
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="field">
+          <label for="principal">Initial Balance</label>
+          <div class="input-wrap">
+            <span class="input-prefix" id="currency-symbol" aria-hidden="true">₹</span>
+            <input type="number" id="principal" placeholder="10,000" min="0" step="any" autocomplete="off"
+              aria-describedby="principal-error" aria-label="Starting balance" />
+          </div>
+          <span class="error-msg" id="principal-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="currency">Currency</label>
+          <div class="input-wrap select-wrap">
+            <select id="currency">
+              <option value="INR" data-symbol="₹" data-locale="en-IN">INR (₹)</option>
+              <option value="USD" data-symbol="$" data-locale="en-US">USD ($)</option>
+              <option value="EUR" data-symbol="€" data-locale="de-DE">EUR (€)</option>
+              <option value="GBP" data-symbol="£" data-locale="en-GB">GBP (£)</option>
+              <option value="JPY" data-symbol="¥" data-locale="ja-JP">JPY (¥)</option>
+            </select>
+            <span class="select-arrow">▾</span>
+          </div>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="field">
+          <label for="rate">Interest Rate</label>
+          <div class="input-group">
+            <div class="input-wrap">
+              <input type="number" id="rate" placeholder="7.0" min="0" step="any" autocomplete="off"
+                aria-describedby="rate-error" aria-label="Interest rate" />
+              <span class="input-suffix" aria-hidden="true">%</span>
+            </div>
+
+          </div>
+          <span class="error-msg" id="rate-error" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Investment Duration -->
+      <div class="field full-width" style="margin-top: 10px;">
+        <label>Investment Duration</label>
+        <div class="days-section">
+          <div class="days-mode-toggle" role="tablist" aria-label="Days input method">
+            <button class="days-mode-btn active" data-panel="manual" role="tab" aria-selected="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+              Enter Days
+            </button>
+            <button class="days-mode-btn" data-panel="daterange" role="tab" aria-selected="false">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Date Range
+            </button>
+          </div>
+
+          <div class="days-panel" id="panel-manual" role="tabpanel">
+            <div class="field">
+              <div class="input-wrap">
+                <input type="number" id="days" placeholder="365" min="1" max="3650" step="1" inputmode="numeric"
+                  pattern="[0-9]*" autocomplete="off" aria-describedby="days-error"
+                  aria-label="Number of days for interest calculation" />
+              </div>
+              <span class="error-msg" id="days-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="days-panel hidden" id="panel-daterange" role="tabpanel">
+            <div class="date-range-direct">
+              <div class="date-custom-row">
+                <input type="date" id="start-date" aria-label="Start date" />
+                <span class="date-sep">→</span>
+                <input type="date" id="end-date" aria-label="End date" />
+                <button class="date-apply" id="apply-dates">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button class="calc-btn" id="calc-btn">
+        <span>Calculate</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </button>
+
+      <!-- Results -->
+      <div class="results hidden" id="results">
+        <div class="results-divider"><span>Results</span></div>
+
+        <!--
+          FIX #4: res-days and res-rate are now populated by JS.
+          Layout fix: 5 cards in results-grid-5 (2-2-1 layout via CSS) — no orphan on desktop.
+        -->
+        <div class="results-grid results-grid-5">
+          <div class="result-card">
+            <div class="result-label">Principal Amount</div>
+            <div class="result-value" id="res-principal">—</div>
+          </div>
+          <div class="result-card accent">
+            <div class="result-label">Interest Earned</div>
+            <div class="result-value" id="res-interest">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Total Value</div>
+            <div class="result-value" id="res-total">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Total Days</div>
+            <div class="result-value" id="res-days">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Annual Rate</div>
+            <div class="result-value" id="res-rate">—</div>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="interest-bar">
+          <div class="bar-labels">
+            <span>Principal</span>
+            <span>Interest</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-principal" id="bar-principal"></div>
+            <div class="bar-interest" id="bar-interest"></div>
+          </div>
+          <div class="bar-pcts">
+            <span id="pct-principal">—</span>
+            <span id="pct-interest">—</span>
+          </div>
+        </div>
+
+        <!-- FIX #5: Schedule starts visible (not hidden); JS populates rows and CSV handler is wired up -->
+        <div class="detailed-schedule" id="detailed-schedule-container">
+          <div class="schedule-header">
+            <h3>Detailed Daily Schedule</h3>
+            <button class="csv-btn" id="download-csv">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download CSV
+            </button>
+          </div>
+          <div class="schedule-table-meta" id="schedule-meta">—</div>
+          <div class="table-scroll">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Daily Interest</th>
+                  <th>Total Interest</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody id="schedule-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Reset -->
+        <button class="reset-btn" id="reset-btn">↺ Reset</button>
+      </div>
+
+    </main>
+
+    <!-- Content Sections — FIX #15: reverted back to content-card to fix transparency bug -->
+    <div class="content-wrapper">
+      <section class="content-card">
+        <h2>📊 What Exactly Is Daily Compound Interest?</h2>
+        <p>Imagine you deposit ₹10,000 in your bank account today. With simple interest, the bank only pays you
+          interest on that initial ₹10,000. But with <strong>compound interest</strong>, the bank pays you interest on
+          the ₹10,000 <em>plus</em> any interest that has already been added to it.</p>
+        <p>When this compounding happens <strong>every single day</strong>, your balance updates daily. The next day's
+          interest is calculated on a slightly larger amount. Over weeks, months, and years, this creates a snowball
+          effect that builds your wealth much faster than yearly compounding.</p>
+
+        <h3>Simple vs. Daily Compound: A Real-World Comparison</h3>
+        <p>Let's look at a realistic example. Suppose you invest ₹1,00,000 at a 7% annual interest rate for 5 years
+          (1,825 days). Here is how simple interest compares with daily compound interest:</p>
+
+        <table class="premium-table">
+          <thead>
+            <tr>
+              <th>Interest Type</th>
+              <th>Initial Balance</th>
+              <th>Time</th>
+              <th>Final Amount</th>
+              <th>Total Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Simple Interest</td>
+              <td>₹1,00,000</td>
+              <td>5 Years</td>
+              <td>₹1,35,000</td>
+              <td>₹35,000</td>
+            </tr>
+            <tr>
+              <!-- FIX #6: corrected from ₹1,41,903 / ₹41,903 → accurate ₹1,41,902 / ₹41,902 -->
+              <td>Daily Compound</td>
+              <td>₹1,00,000</td>
+              <td>5 Years</td>
+              <td><strong>₹1,41,902</strong></td>
+              <td><strong>₹41,902</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <p>💡 <strong>Key Takeaway:</strong> Simply choosing an account that offers daily compounding gives you an
+            extra <strong>₹6,902</strong> completely free, just because of the math!</p>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>⭐ Review: Why We Love This Calculator Tool</h2>
+        <p>We have tested many financial tools, and this calculator stands out because of its <strong>simplicity and
+            accuracy</strong>. Here are the top reasons why it is useful for Indian investors:</p>
+        <ul class="modern-list">
+          <li><strong>No Fluff, Just Numbers:</strong> You enter your Initial Balance, the Annual Interest Rate, and the
+            Duration. You instantly get exact results without confusing financial jargon.</li>
+          <li><strong>Detailed Breakdown:</strong> Unlike basic tools that only show the final maturity amount, this
+            calculator gives you a detailed daily schedule so you can see how much you earned each day.</li>
+          <li><strong>CSV Export Feature:</strong> For planners who love Excel, the ability to download the daily
+            breakdown as a CSV file is excellent. It allows you to track your goals easily.</li>
+          <li><strong>100% Verified Formula:</strong> This calculator uses the globally verified mathematical formula,
+            accurately calculating the daily periodic rate without making false claims.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>⚙️ How This Calculator Works</h2>
+        <p>Using this calculator is very simple. We designed it so anyone can use it without a finance degree. Here is
+          how it calculates your wealth:</p>
+        <ul class="modern-list">
+          <li><strong>Step 1: The Starting Balance:</strong> The calculator looks at the initial money you deposit (the
+            Principal).</li>
+          <li><strong>Step 2: Finding the Daily Rate:</strong> It takes your Annual Interest Rate and divides it by 365.
+            This gives the exact interest percentage earned per day.</li>
+          <li><strong>Step 3: The Daily Calculation:</strong> It calculates the interest for Day 1 and adds it to your
+            balance. Then on Day 2, it calculates interest on that <em>new, higher balance</em>. It repeats this for the
+            exact number of days you entered.</li>
+          <li><strong>Step 4: Final Output:</strong> Finally, it shows your Total Profit (Interest Earned), Total Final
+            Value, and builds a detailed schedule of every single day's growth.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>🧮 The True Mathematical Formula Explained</h2>
+        <p>You don't need to do the math yourself, but if you want to know what runs inside our calculator, it uses the
+          standard global formula for compound interest:</p>
+        <div class="formula" style="font-size: 18px; text-align: center;">A = P × (1 + r/n)<sup>(n×t)</sup></div>
+        <ul class="modern-list">
+          <li><strong>A</strong> stands for the Total Final Amount.</li>
+          <li><strong>P</strong> stands for the Principal (Initial Balance).</li>
+          <li><strong>r</strong> stands for the Annual Interest Rate (converted to a decimal, like 0.07 for 7%).</li>
+          <li><strong>n</strong> stands for the Compounding Frequency (For Daily Compound, n = 365).</li>
+          <li><strong>t</strong> stands for the Time in Years.</li>
+        </ul>
+        <div class="highlight-box">
+          <p>Because processing this formula for hundreds of days by hand is nearly impossible, our tool automatically
+            creates a loop to process it instantly in the browser.</p>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>❓ Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-accordion">
+          <details>
+            <summary>Do Indian banks really compound interest daily?</summary>
+            <p>Yes. As per RBI guidelines, most savings accounts in India calculate interest on your daily closing
+              balance. However, the interest is usually <em>credited</em> to your account only once every quarter (every
+              3 months).</p>
+          </details>
+          <details>
+            <summary>Is daily compounding better than monthly compounding?</summary>
+            <p>Absolutely. The more frequently your money compounds, the faster it grows. Daily compounding is
+              mathematically superior to weekly, monthly, or yearly compounding because your interest starts earning its
+              own interest much sooner.</p>
+          </details>
+          <details>
+            <summary>Can I use this for my Fixed Deposits (FDs)?</summary>
+            <p>Yes! While many FDs compound quarterly, some specialized FDs and reinvestment plans use daily
+              compounding. Using this calculator will give you the most aggressive growth estimate possible for your
+              investment.</p>
+          </details>
+          <details>
+            <summary>What is considered a good daily interest rate?</summary>
+            <p>Interest rates are almost always quoted annually. If a bank offers 7% per year, the "daily rate" is
+              roughly 0.019%. Don't look for "daily rates" — look for the highest Annual Rate (APY) that offers daily
+              compounding.</p>
+          </details>
+          <details>
+            <summary>Is this calculator free to use?</summary>
+            <p>Yes, this calculator is 100% free with no hidden charges, required account sign-ups, or usage limits.
+              Use it as often as you need to plan your financial goals.</p>
+          </details>
+          <details>
+            <summary>Does this tool account for taxes like TDS?</summary>
+            <p>No. This calculator shows your gross (total) interest earned. In India, banks deduct Tax Deducted at
+              Source (TDS) if your interest crosses a certain limit (currently ₹40,000 for regular individuals). You
+              will need to calculate your tax separately depending on your tax slab.</p>
+          </details>
+          <details>
+            <summary>What is the difference between Simple Interest and Compound Interest?</summary>
+            <p>Simple interest gives you a fixed amount of return based only on your starting money. Compound interest
+              gives you returns on both your starting money AND the interest you have already earned. Compounding is
+              much better for long-term wealth.</p>
+          </details>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="../index.html">Daily Simple Interest</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../cookies.html">Cookie Policy</a>
+      </div>
+      <p>This compound interest calculator is for educational purposes. Calculations are based on standard mathematical
+        formulas and may vary slightly from your financial institution's specific rounding rules or taxation policies.
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="../js/calculator.js" defer></script>
+</body>
+
+</html>
